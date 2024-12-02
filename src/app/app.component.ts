@@ -15,9 +15,25 @@ import {  Bold, Essentials, Italic, Paragraph, Undo, DecoupledEditor, List, Clas
 export class AppComponent {
     title = 'angular';
 
+    public isDisabled:boolean = false;
+    public isRlt:boolean = false;
+
     public Editor = ClassicEditor;
     public config = {
         plugins: [ Bold, Essentials, Italic, Paragraph, Undo, List  ],
-        toolbar: [ 'undo', 'redo', '|', 'bold', 'italic' , 'bulletedList']
+        toolbar: [ 'undo', 'redo', '|', 'bold', 'italic' , 'bulletedList'],
+        language: 'ar'
+    }
+
+
+    toggleDisabled() {
+        this.isDisabled = !this.isDisabled
+    }
+
+    switchDisplayDirection(){
+        // this.config = { 
+        //     ...this.config,
+        //     language:'ar'
+        // }
     }
 }
