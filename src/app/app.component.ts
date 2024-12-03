@@ -14,9 +14,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
-    encapsulation: ViewEncapsulation.None,
-    imports: [CKEditorModule, FormsModule, MatFormFieldModule, MatButtonModule, MatCheckboxModule, MatSelectModule],
-    standalone: true
+    encapsulation: ViewEncapsulation.None, 
+    imports: [CKEditorModule, FormsModule, MatFormFieldModule, MatButtonModule, MatCheckboxModule, MatSelectModule]
 })
 export class AppComponent {
     title = 'angular';
