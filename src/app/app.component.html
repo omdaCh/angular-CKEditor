@@ -1,24 +1,19 @@
 <div class="flex flex-col gap-3 p-5">
   <p class="text-2xl font-medium mb-5">Angular CKEditor</p>
-  <div class="flex flex-row gap-2">
+  <div class="flex flex-row gap-3 items-center">
 
     <mat-checkbox [(ngModel)]="isDisabled">
       Disable
     </mat-checkbox>
-    <mat-form-field>
-      <mat-select >
-        <mat-option>Clear</mat-option>
-        <mat-option value="valid">Valid option</mat-option>
-        <mat-option value="invalid">Invalid option</mat-option>
-      </mat-select>
-    </mat-form-field>
 
-
-
-
-    <button mat-stroked-button (click)="toggleEditorDirection()">
-      {{ isRtl ? 'Change to LTR' : 'Change to RTL'}}
+    <button mat-button [matMenuTriggerFor]="menu" color="secondary">
+      {{selectedLanguage}}
+      <mat-icon>language</mat-icon>
     </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="selectedLanguage='English'">English</button>
+      <button mat-menu-item (click)="selectedLanguage='Arabic'">Arabic</button>
+    </mat-menu>
 
     <mat-checkbox [(ngModel)]="isCustomTheme">
       Costum theme
