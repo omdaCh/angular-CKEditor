@@ -2,14 +2,15 @@
 
 import { Component, ViewEncapsulation } from '@angular/core';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-import {  Bold, Essentials, Italic, Paragraph, Undo, DecoupledEditor, List, ClassicEditor } from 'ckeditor5';
+import {  Bold, Essentials, Italic, Paragraph, Undo, List, ClassicEditor } from 'ckeditor5';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component( {
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    imports: [ CKEditorModule ],
+    imports: [ CKEditorModule, MatButtonModule ],
     standalone: true
 } )
 export class AppComponent {
