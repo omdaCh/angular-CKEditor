@@ -1,5 +1,5 @@
 <div class="flex flex-col gap-3 p-5">
-  <p class="text-2xl font-medium mb-5">Angular CKEditor</p>
+  <p class="text-2xl font-medium mb-5">Angular + CKEditor</p>
   <div class="flex flex-row gap-3 items-center">
 
     <mat-checkbox [(ngModel)]="isDisabled">
@@ -7,12 +7,12 @@
     </mat-checkbox>
 
     <button mat-button [matMenuTriggerFor]="menu" color="secondary">
-      {{selectedLanguage}}
+      {{editorLanguage=='en'?'English':'Arabic'}}
       <mat-icon>language</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item (click)="selectedLanguage='English'">English</button>
-      <button mat-menu-item (click)="selectedLanguage='Arabic'">Arabic</button>
+      <button mat-menu-item (click)="setLanguage('en')">English</button>
+      <button mat-menu-item (click)="setLanguage('ar')">Arabic</button>
     </mat-menu>
 
     <mat-checkbox [(ngModel)]="isCustomTheme">

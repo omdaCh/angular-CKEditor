@@ -9,6 +9,7 @@
     "test": "ng test"
   },
   "private": true,
+  "optimization": true,
   "dependencies": {
     "@angular/animations": "^19.0.1",
     "@angular/cdk": "^19.0.1",
@@ -22,6 +23,7 @@
     "@angular/router": "^19.0.1",
     "@ckeditor/ckeditor5-angular": "^9.1.0",
     "ckeditor5": "^44.0.0",
+    "firebase": "^11.0.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
