@@ -5,7 +5,6 @@
     <mat-checkbox [(ngModel)]="isDisabled">
       Disable
     </mat-checkbox>
-
     <button mat-button [matMenuTriggerFor]="menu" color="secondary">
       {{editorLanguage=='en'?'English':'Arabic'}}
       <mat-icon>language</mat-icon>
@@ -14,12 +13,11 @@
       <button mat-menu-item (click)="setLanguage('en')">English</button>
       <button mat-menu-item (click)="setLanguage('ar')">Arabic</button>
     </mat-menu>
-
     <mat-checkbox [(ngModel)]="isCustomTheme">
       Costum theme
     </mat-checkbox>
-
   </div>
+
   @if(showEditor){
   <ckeditor [class.ck-editor-custom-theme]="isCustomTheme" [editor]="editor" [config]="config" [(ngModel)]="editorData"
     [disabled]="isDisabled" tagName="textarea"></ckeditor>

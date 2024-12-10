@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, inject, ViewEncapsulation } from '@angular/core';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import {
     Bold, Essentials, Italic, Paragraph, Undo, List, ClassicEditor, Heading, Link, Table, Image,
@@ -19,6 +19,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import arTranslations from 'ckeditor5/translations/ar.js';
 import enTranslations from 'ckeditor5/translations/en.js';
+import { ChangeDetectorRef } from '@angular/core';
 
 
 @Component({
@@ -26,36 +27,34 @@ import enTranslations from 'ckeditor5/translations/en.js';
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    imports: [CKEditorModule, MatSelectModule, FormsModule, ReactiveFormsModule, MatButtonModule, MatMenuModule, MatCheckboxModule, MatSelectModule, MatIconModule]
+    imports: [CKEditorModule, FormsModule, ReactiveFormsModule, MatButtonModule, MatMenuModule, MatCheckboxModule, MatSelectModule, MatIconModule]
 })
 export class AppComponent {
-    title = 'angular';
 
     public isDisabled: boolean = false;
-    public isRtl: boolean = false;
     public editorLanguage: 'en' | 'ar' = 'en';
     public isCustomTheme: boolean = false;
 
     public showEditor: boolean = true;
+
     public editorData: string = '<p>Hello, world!</p>';
 
     public editor = ClassicEditor;
     public config = {
         licenseKey: 'GPL',
-        plugins: [Bold, 
-            Essentials, 
-            Italic, 
-            Underline, 
-            Paragraph, 
-            Undo, 
-            List, 
+        plugins: [Bold,
+            Essentials,
+            Italic,
+            Underline,
+            Paragraph,
+            Undo,
+            List,
             Indent,
-			// IndentBlock,
-            Heading, 
-            Link, 
-            Table, 
-            ImageUpload, 
-            Image, 
+            Heading,
+            Link,
+            Table,
+            ImageUpload,
+            Image,
             ImageCaption,
             ImageResize,
             ImageStyle,
@@ -63,34 +62,29 @@ export class AppComponent {
             ImageUpload,
             Base64UploadAdapter],
 
-        toolbar: ['undo', 
-            'redo', 
-            '|', 
-            'heading', 
-            '|', 
-            'bold', 
-            'italic', 
-            'underline', 
-            '|', 
-            'link', 
-            'insertTable', 
-            'uploadImage', 
-            '|', 
-            'bulletedList', 
+        toolbar: ['undo',
+            'redo',
+            '|',
+            'heading',
+            '|',
+            'bold',
+            'italic',
+            'underline',
+            '|',
+            'link',
+            'insertTable',
+            'uploadImage',
+            '|',
+            'bulletedList',
             'numberedList',
             'outdent',
             'indent'],
         language: 'en',
-        placeholder: 'Type the content here!',
         translations: [enTranslations]
     }
 
+    private cdr = inject(ChangeDetectorRef)
     constructor() { }
-
-
-    toggleDisabled() {
-        this.isDisabled = !this.isDisabled
-    }
 
     setLanguage(language: 'en' | 'ar') {
         this.showEditor = false;
@@ -98,14 +92,13 @@ export class AppComponent {
             return;
         else {
             this.editorLanguage = language;
-            setTimeout(() => {
-                this.config = {
-                    ...this.config,
-                    language: this.editorLanguage,
-                    translations: [this.editorLanguage == 'en' ? enTranslations : arTranslations]
-                };
-                this.showEditor = true;
-            }, 100);
+            this.config = {
+                ...this.config,
+                language: this.editorLanguage,
+                translations: [this.editorLanguage == 'en' ? enTranslations : arTranslations]
+            };
+            this.cdr.detectChanges();
+            this.showEditor = true;
         }
 
     }

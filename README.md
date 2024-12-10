@@ -1,27 +1,40 @@
 # AngularCKEditor
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.5.
+This project demonstrates how to integrate CKEditor (open-source version) into an Angular application. It explores advanced features such as custom theming, editor enabling/disabling, and localization with support for English and Arabic.
 
-## Development server
+## 🛠️ Technologies Used
+- **Angular** (vX.X): Frontend framework.
+- **CKEditor:** Rich text editor library.
+- **Angular Material:** UI components for a modern and responsive design.
+- **Tailwind:** Open source css framework.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 📦 Installation
 
-## Code scaffolding
+### Prerequisites
+Ensure you have the following installed:
+- **Node.js** 19.0.x or higher
+- **Angular CLI** ^18.19.1
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Steps
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/omdaCh/angular-CKEditor.git
+   cd angular-CKEditor
 
-## Build
+2. Install dependencies:
+   npm install
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+3. Run the application:
+   Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Running unit tests
+## ℹ️ More Information
+For a detailed explanation and step-by-step guide, you can read the full article on Medium https://medium.com/@chemakhi.imad/ckeditor-in-angular-a-seamless-integration-f241318c4da4.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 🤝 Contributions
+Contributions are welcome! Feel free to submit a pull request or open an issue to suggest improvements.
 
-## Running end-to-end tests
+## 📄 License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 📧 Contact
+For questions or suggestions, reach out to chemakhi.imad@gmail.com or connect with me on LinkedIn https://www.linkedin.com/in/imad-chemakhi-371a45218.
