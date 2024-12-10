@@ -3,17 +3,17 @@
 This project demonstrates how to integrate CKEditor (open-source version) into an Angular application. It explores advanced features such as custom theming, editor enabling/disabling, and localization with support for English and Arabic.
 
 ## 🛠️ Technologies Used
-- **Angular** (vX.X): Frontend framework.
-- **CKEditor:** Rich text editor library.
-- **Angular Material:** UI components for a modern and responsive design.
+- **Angular** (^19.0.1): Frontend framework.
+- **CKEditor 5:** Rich text editor library.
+- **Angular Material** (^19.0.1): UI components for a modern and responsive design.
 - **Tailwind:** Open source css framework.
 
 ## 📦 Installation
 
 ### Prerequisites
 Ensure you have the following installed:
-- **Node.js** 19.0.x or higher
-- **Angular CLI** ^18.19.1
+- **Node.js**  ^18.19.1 
+- **Angular CLI** ^19.0.1
 
 ### Steps
 1. Clone the repository:
@@ -22,6 +22,7 @@ Ensure you have the following installed:
    cd angular-CKEditor
 
 2. Install dependencies:
+   ```bash
    npm install
 
 3. Run the application:
