@@ -2,6 +2,8 @@
 
 This project demonstrates how to integrate CKEditor (open-source version) into an Angular application. It explores advanced features such as custom theming, editor enabling/disabling, and localization with support for English and Arabic.
 
+![Chatbot Demo](media/demo.gif)
+
 ## 🛠️ Technologies Used
 - **Angular** (^19.0.1): Frontend framework.
 - **CKEditor 5:** Rich text editor library.
